@@ -1,0 +1,11 @@
+.next
+node_modules
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+.DS_Store
+deploy-verify-*.png
+/freebuff-sites-build/
+/.open-next/
+/.wrangler/

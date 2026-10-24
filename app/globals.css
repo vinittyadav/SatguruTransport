@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #06090f;
+  --surface: #0a0f17;
+  --surface-2: #0d131d;
+  --border: #1a2432;
+  --text: #eef2f7;
+  --text-muted: #8b99ac;
+  --accent: #f5a623;
+  --accent-deep: #c77d0a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+::selection {
+  background: rgba(245, 166, 35, 0.25);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #243144;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #33435c;
+}
+
+/* Utility classes */
+.container-premium {
+  @apply mx-auto w-full max-w-7xl px-6 lg:px-8;
+}
+
+.section-pad {
+  @apply py-24 lg:py-32;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #eef2f7 0%, #d8e0ea 50%, #f5a623 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heading-xl {
+  @apply text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl;
+}
+
+.heading-lg {
+  @apply text-3xl font-semibold tracking-tight text-white sm:text-4xl;
+}
+
+.heading-md {
+  @apply text-2xl font-semibold tracking-tight text-white;
+}
+
+.body-muted {
+  @apply text-base leading-relaxed text-mist-400;
+}
+
+/* Card system */
+.card {
+  @apply rounded-lg border border-navy-700 bg-navy-850 p-6;
+}
+
+.card-interactive {
+  @apply card transition-all duration-300 hover:border-amber-500/40 hover:bg-navy-800;
+}
+
+/* Buttons are components in ui/Button.tsx — these are layout helpers */
+.btn-base {
+  @apply inline-flex items-center justify-center gap-2 font-semibold tracking-wide transition-all duration-200 disabled:pointer-events-none disabled:opacity-50;
+}
+
+/* Forms */
+.input-base {
+  @apply w-full rounded-md border border-navy-600 bg-navy-900 px-4 py-3 text-sm text-white placeholder:text-mist-500 focus:border-amber-500/60 focus:outline-none focus:ring-1 focus:ring-amber-500/20;
+}
+
+.label-base {
+  @apply mb-2 block text-sm font-medium text-mist-200;
+}
+
+.error-text {
+  @apply mt-1.5 text-sm text-rose-400;
+}
+
+/* Status chips */
+.chip {
+  @apply inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium;
+}
+
+/* Section eyebrow label */
+.eyebrow {
+  @apply mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-amber-500;
+}
+
+/* Divider */
+.hairline {
+  @apply border-navy-700;
+}
+
+/* Grid texture for sections */
+.grid-texture {
+  background-image:
+    linear-gradient(rgba(26, 36, 50, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 36, 50, 0.4) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Vignette for 3D section edges */
+.vignette-fade {
+  background: linear-gradient(
+    180deg,
+    var(--bg) 0%,
+    transparent 18%,
+    transparent 82%,
+    var(--bg) 100%
+  );
+}
+
+/* Room for the mobile bottom action bar (hidden on /dashboard). */
+@media (max-width: 1023px) {
+  body:not(.has-app-tabbar) {
+    padding-bottom: 4.25rem;
+  }
+}
+
+/* ≠1 → 05 progress numerals for the quote wizard */
+.step-numeral {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}

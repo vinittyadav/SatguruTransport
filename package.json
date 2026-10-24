@@ -1,0 +1,46 @@
+{
+  "name": "satguru-transport",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:types": "supabase gen types typescript --local > types/database.ts"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@react-three/drei": "^10.7.6",
+    "@react-three/fiber": "^9.3.0",
+    "@supabase/ssr": "^0.8.0",
+    "@supabase/supabase-js": "^2.75.0",
+    "framer-motion": "^12.23.12",
+    "lucide-react": "^0.544.0",
+    "next": "^16.4.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-hook-form": "^7.63.0",
+    "three": "^0.180.0",
+    "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "@opennextjs/cloudflare": "1.20.12",
+    "@types/node": "^24",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/three": "^0.180.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9",
+    "eslint-config-next": "^16.4.2",
+    "postcss": "^8.5.6",
+    "supabase": "^2.118.0",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.7",
+    "wrangler": "4.148.0"
+  }
+}
